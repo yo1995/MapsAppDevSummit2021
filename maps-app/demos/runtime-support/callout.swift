@@ -4,7 +4,6 @@ import ArcGIS
 class ViewController: UIViewController, AGSGeoViewTouchDelegate {
     @IBOutlet var mapView: AGSMapView! {
         didSet {
-            let map = AGSMap(basemapStyle: .arcGISTopographic)
             mapView.map = AGSMap(basemapStyle: .arcGISTopographic)
             mapView.setViewpoint(AGSViewpoint(latitude: 34, longitude: -117, scale: 4e7))
             mapView.touchDelegate = self
