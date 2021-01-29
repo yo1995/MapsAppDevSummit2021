@@ -27,7 +27,7 @@ extension MapsAppDelegate {
             AGSApplicationDelegate.shared().application(app, open: url, options: options)
             
             // See if we were called back with confirmation that we're authorized.
-            if let _ = urlComponents.queryParameter(named: "code") {
+            if urlComponents.queryParameter(named: "code") != nil {
                 // If we were authenticated, there should now be a shared credential to use. Let's try it.
                 mapsAppContext.signInCurrentPortalIfPossible()
             }

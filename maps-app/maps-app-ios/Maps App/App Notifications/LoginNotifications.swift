@@ -39,8 +39,7 @@ extension MapsAppNotifications {
 // MARK: Internals
 extension MapsAppNotifications {
     static func postSignedInNotification(user: AGSPortalUser) {
-        NotificationCenter.default.post(name: MapsAppNotifications.Names.appSignedIn, object: mapsApp,
-                                        userInfo: [LoginNotifications.userKey: user])
+        NotificationCenter.default.post(name: MapsAppNotifications.Names.appSignedIn, object: mapsApp, userInfo: [LoginNotifications.userKey: user])
     }
 
     static func postSignedOutNotification() {

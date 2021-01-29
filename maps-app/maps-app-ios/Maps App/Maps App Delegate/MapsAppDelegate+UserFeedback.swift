@@ -24,7 +24,7 @@ extension MapsAppDelegate {
             - message: A message to display.
             - buttonText: Text for the single default button. Defaults to "OK"
     */
-    func showDefaultAlert(title: String? = nil, message: String, buttonText: String = "OK") {
+    func showDefaultAlert(title: String, message: String, buttonText: String = "OK") {
         if let currentViewController = window?.rootViewController?.presentedViewController ?? window?.rootViewController {
             let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: buttonText, style: .default))

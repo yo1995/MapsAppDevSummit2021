@@ -33,7 +33,7 @@ extension ArcGISServices {
             if let result = results?.first {
                 MapsAppNotifications.postSearchCompletedNotification(result: result)
             } else {
-                mapsApp.showDefaultAlert(message: "\"\(searchText)\"\nreturned no results.")
+                mapsApp.showDefaultAlert(title: "Uh-oh", message: "\"\(searchText)\"\nreturned no results.")
             }
         }
     }
@@ -110,7 +110,7 @@ extension ArcGISServices {
             if let result = results?.first {
                 MapsAppNotifications.postSearchCompletedNotification(result: result)
             } else {
-                mapsApp.showDefaultAlert(message: "Autocomplete for\n\"\(suggestion.label)\"\nreturned no results.")
+                mapsApp.showDefaultAlert(title: "Uh-oh", message: "Autocomplete for\n\"\(suggestion.label)\"\nreturned no results.")
             }
         }
     }

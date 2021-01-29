@@ -79,7 +79,7 @@ class PortalUserFolder: AGSLoadableBase {
         return containerType.hashValue
     }
     
-    static func ==(lhs: PortalUserFolder, rhs: PortalUserFolder) -> Bool {
+    static func == (lhs: PortalUserFolder, rhs: PortalUserFolder) -> Bool {
         return lhs.containerType == rhs.containerType
     }
     

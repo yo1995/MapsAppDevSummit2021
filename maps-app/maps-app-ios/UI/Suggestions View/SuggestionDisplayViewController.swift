@@ -54,11 +54,15 @@ class SuggestionDisplayViewController: UIViewController, UITableViewDataSource, 
         
         suggestions = nil
         
-        MapsAppNotifications.observeSearchNotifications(owner: self, searchResultHandler: { [weak self] _ in
-            self?.suggestions = nil
-        }, suggestionsAvailableHandler: { [weak self] suggestions in
-            self?.suggestions = suggestions
-        })
+        MapsAppNotifications.observeSearchNotifications(
+            owner: self,
+            searchResultHandler: { [weak self] _ in
+                self?.suggestions = nil
+            },
+            suggestionsAvailableHandler: { [weak self] suggestions in
+                self?.suggestions = suggestions
+            }
+        )
     }
     
     deinit {
@@ -66,6 +70,7 @@ class SuggestionDisplayViewController: UIViewController, UITableViewDataSource, 
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         setViewHiddenState()
     }
     

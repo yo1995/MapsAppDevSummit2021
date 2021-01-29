@@ -50,7 +50,8 @@ public class NorthArrowView: RoundedImageView {
     // Track any alpha override that may have been set in the Storyboard.
     private var initialAlpha: CGFloat?
     
-    @objc func resetNorth() {
+    @objc
+    func resetNorth() {
         self.mapView?.setViewpointRotation(0, completion: nil)
     }
     
@@ -95,11 +96,15 @@ public class NorthArrowView: RoundedImageView {
                 return
             }
             
-            UIView.animate(withDuration: duration, animations: { [weak self] in
-                self?.alpha = 0
-            }, completion: { [weak self] _ in
-                self?.isHidden = true
-            })
+            UIView.animate(
+                withDuration: duration,
+                animations: { [weak self] in
+                    self?.alpha = 0
+                },
+                completion: { [weak self] _ in
+                    self?.isHidden = true
+                }
+            )
         }
     }
     

@@ -99,11 +99,14 @@ class MapViewController: UIViewController {
         // Setup the mode history behaviour.
         setModeHistoryUI()
 
-        MapsAppNotifications.observeMapViewExtentNotifications(owner: self, resetExtentHandler: { [weak self] in
-            self?.updateMapViewExtentForMode()
-        }, focusOnExtentHandler: { [weak self] requestedExtent in
-            self?.mapView.setViewpoint(AGSViewpoint(targetExtent: requestedExtent), completion: nil)
-        })
+        MapsAppNotifications.observeMapViewExtentNotifications(
+            owner: self,
+            resetExtentHandler: { [weak self] in
+                self?.updateMapViewExtentForMode()
+            }, focusOnExtentHandler: { [weak self] requestedExtent in
+                self?.mapView.setViewpoint(AGSViewpoint(targetExtent: requestedExtent), completion: nil)
+            }
+        )
         
         mapsAppContext.currentMapView = mapView
         

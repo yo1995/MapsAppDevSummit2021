@@ -30,8 +30,7 @@ extension MapsAppNotifications {
 // MARK: Internals
 extension MapsAppNotifications {
     static func postFeedbackPanelResizedNotification(panel: FeedbackViewController) {
-        NotificationCenter.default.post(name: MapsAppNotifications.Names.feedbackPanelResized, object: panel,
-                                        userInfo: nil)
+        NotificationCenter.default.post(name: MapsAppNotifications.Names.feedbackPanelResized, object: panel, userInfo: nil)
     }
 }
 

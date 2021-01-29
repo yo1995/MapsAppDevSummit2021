@@ -29,6 +29,6 @@ extension MapViewController {
     }
     
     var feedbackViewController: FeedbackViewController? {
-        return self.children.filter{ $0 is FeedbackViewController }.first as? FeedbackViewController
+        return self.children.first { $0 is FeedbackViewController } as? FeedbackViewController
     }
 }

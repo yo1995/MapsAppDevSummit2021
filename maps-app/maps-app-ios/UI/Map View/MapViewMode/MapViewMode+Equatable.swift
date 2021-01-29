@@ -17,7 +17,7 @@ import Foundation
 infix operator ~==
 
 extension MapViewMode: Equatable {
-    static func ==(lhs: MapViewMode, rhs: MapViewMode) -> Bool {
+    static func == (lhs: MapViewMode, rhs: MapViewMode) -> Bool {
         switch (lhs, rhs) {
         case (.none, .none), (.search, .search):
             return true
@@ -30,7 +30,7 @@ extension MapViewMode: Equatable {
         }
     }
     
-    static func ~==(lhs: MapViewMode, rhs: MapViewMode) -> Bool {
+    static func ~== (lhs: MapViewMode, rhs: MapViewMode) -> Bool {
         // A more loose equality where we just care that it's the same mode, but not the same associated object.
         switch (lhs, rhs) {
         case (.none, .none), (.search, .search), (.routeResult, .routeResult), (.geocodeResult, .geocodeResult):

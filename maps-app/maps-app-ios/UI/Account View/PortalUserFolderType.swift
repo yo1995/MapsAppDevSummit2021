@@ -27,7 +27,7 @@ enum PortalUserFolderType: Hashable, Equatable, CustomStringConvertible {
         }
     }
     
-    static func ==(lhs: PortalUserFolderType, rhs: PortalUserFolderType) -> Bool {
+    static func == (lhs: PortalUserFolderType, rhs: PortalUserFolderType) -> Bool {
         return lhs.hashValue == rhs.hashValue
     }
     

@@ -32,9 +32,7 @@ class BasemapsDisplayViewController: UIViewController {
 
 extension BasemapsDisplayViewController: PortalItemCollectionViewDelegate {
     var items: [AGSPortalItem]? {
-        get {
-            return mapsAppContext.basemaps
-        }
+        return mapsAppContext.basemaps
     }
     
     func portalItemSelected(item: AGSPortalItem) {

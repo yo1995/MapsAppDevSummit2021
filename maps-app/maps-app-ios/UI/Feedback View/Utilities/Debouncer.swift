@@ -33,7 +33,8 @@ class Debouncer: NSObject {
         timer = nextTimer
     }
     
-    @objc func fireNow() {
+    @objc
+    func fireNow() {
         self.callback()
     }
     

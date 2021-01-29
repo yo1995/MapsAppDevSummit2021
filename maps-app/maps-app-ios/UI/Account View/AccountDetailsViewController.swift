@@ -20,9 +20,7 @@ class AccountDetailsViewController: UIViewController {
     @IBOutlet weak var folderButton: UIButton!
     
     var signedInUser: AGSPortalUser? {
-        get {
-            return mapsAppContext.currentUser
-        }
+        return mapsAppContext.currentUser
     }
 
     weak var contentVC: PortalItemCollectionViewController?
@@ -41,13 +39,15 @@ class AccountDetailsViewController: UIViewController {
     }
     
     func setupLoginNotificationHandlers() {
-        MapsAppNotifications.observeLoginStateNotifications(owner: self,
+        MapsAppNotifications.observeLoginStateNotifications(
+            owner: self,
             loginHandler: { [weak self] _ in
                 self?.setDisplayForLoginStatus()
             },
             logoutHandler: { [weak self] in
                 self?.setDisplayForLoginStatus()
-            })
+            }
+        )
     }
     
     func setupFolderChangeNotificationHandlers() {

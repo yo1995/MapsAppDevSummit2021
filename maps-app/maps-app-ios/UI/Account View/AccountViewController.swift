@@ -36,13 +36,15 @@ class AccountViewController: UIViewController {
     }
     
     func setupLoginNotificationHandlers() {
-        MapsAppNotifications.observeLoginStateNotifications(owner: self,
+        MapsAppNotifications.observeLoginStateNotifications(
+            owner: self,
             loginHandler: { [weak self] _ in
                 self?.showAccountPanelForLoginStatus()
             },
             logoutHandler: { [weak self] in
                 self?.showAccountPanelForLoginStatus()
-            })
+            }
+        )
     }
 
     @IBAction func dissmissAccountViewController(_ sender: Any) {

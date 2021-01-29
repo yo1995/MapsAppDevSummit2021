@@ -17,14 +17,12 @@ import ArcGIS
 
 extension MapsAppNotifications {
     static func observeMapViewExtentNotifications(owner: Any, resetExtentHandler:@escaping () -> Void, focusOnExtentHandler:@escaping (AGSEnvelope) -> Void) {
-        let ref = NotificationCenter.default.addObserver(forName: MapsAppNotifications.Names.mapViewResetExtentForMode, object: nil, queue: OperationQueue.main) {
-            _ in
+        let ref = NotificationCenter.default.addObserver(forName: MapsAppNotifications.Names.mapViewResetExtentForMode, object: nil, queue: OperationQueue.main) { _ in
             resetExtentHandler()
         }
         MapsAppNotifications.registerBlockHandler(blockHandler: ref, forOwner: owner)
         
-        let focusRef = NotificationCenter.default.addObserver(forName: MapsAppNotifications.Names.mapViewReqestFocusOnExtent, object: nil, queue: OperationQueue.main) {
-            notification in
+        let focusRef = NotificationCenter.default.addObserver(forName: MapsAppNotifications.Names.mapViewReqestFocusOnExtent, object: nil, queue: OperationQueue.main) { notification in
             if let extent = notification.requestedExtent {
                 focusOnExtentHandler(extent)
             }

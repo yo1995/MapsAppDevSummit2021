@@ -61,8 +61,6 @@ extension AGSDirectionManeuverType: CustomStringConvertible {
     }
 
     var image: UIImage {
-        get {
-            return UIImage(named: "\(self)")!
-        }
+        return UIImage(named: "\(self)")!
     }
 }

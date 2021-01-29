@@ -16,7 +16,7 @@ import Foundation
 
 extension URLComponents {
     func queryParameter(named name: String) -> String? {
-        return self.queryItems?.filter({ $0.name == name }).first?.value
+        return self.queryItems?.first { $0.name == name }?.value
     }
 }
 
