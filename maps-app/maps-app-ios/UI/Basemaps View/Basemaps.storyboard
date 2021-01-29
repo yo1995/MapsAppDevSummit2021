@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14810.12" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="wdl-r7-L0J">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14766.15"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Select a basemap-->
+        <scene sceneID="BQY-Sj-ntN">
+            <objects>
+                <viewController id="VGr-pc-EfB" customClass="BasemapsDisplayViewController" customModule="maps_app_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kTg-s4-seS"/>
+                        <viewControllerLayoutGuide type="bottom" id="c9X-qK-bV3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Q5q-6j-DDd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xYy-Dm-kPt">
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <connections>
+                                    <segue destination="kGH-hE-TYD" kind="embed" id="3Vu-3d-EyG"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="c9X-qK-bV3" firstAttribute="top" secondItem="xYy-Dm-kPt" secondAttribute="bottom" id="AKz-Eg-3BZ"/>
+                            <constraint firstAttribute="trailing" secondItem="xYy-Dm-kPt" secondAttribute="trailing" id="Vrw-VT-Iz5"/>
+                            <constraint firstItem="xYy-Dm-kPt" firstAttribute="leading" secondItem="Q5q-6j-DDd" secondAttribute="leading" id="lc1-7L-3wI"/>
+                            <constraint firstItem="xYy-Dm-kPt" firstAttribute="top" secondItem="kTg-s4-seS" secondAttribute="bottom" id="ns2-xN-Jtb"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Select a basemap" id="VLf-y0-aZL">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="5wC-uX-gIH">
+                            <connections>
+                                <action selector="cancelBasemapPicker:" destination="VGr-pc-EfB" id="XL3-bf-sxS"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jAI-E8-Ce7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1060" y="139.880059970015"/>
+        </scene>
+        <!--PortalItemsBrowser-->
+        <scene sceneID="k0s-AE-wOb">
+            <objects>
+                <viewControllerPlaceholder storyboardName="PortalItemsBrowser" id="kGH-hE-TYD" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pgo-E1-beR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1808.8" y="10.794602698650676"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="gkF-kA-mhO">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wdl-r7-L0J" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="y90-Sw-fWI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="VGr-pc-EfB" kind="relationship" relationship="rootViewController" id="vFg-Z6-Ruj"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="evb-fd-J0v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="120.8" y="139.880059970015"/>
+        </scene>
+    </scenes>
+</document>
