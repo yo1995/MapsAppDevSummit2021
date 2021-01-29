@@ -84,3 +84,4 @@ trailing_closure:
 
 excluded:
 - docs
+- maps-app-ios/3rd Party/ProgressHUD.swift

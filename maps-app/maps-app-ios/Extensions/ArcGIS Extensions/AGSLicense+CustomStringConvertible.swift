@@ -32,7 +32,7 @@ extension AGSLicense {
                 return "\(self.licenseStatus) Until \(expirationDate)"
             case .loginRequired:
                 // Don't know what expiry is in this case, so we'll assume it's provided.
-                fallthrough
+                return "\(self.licenseStatus) Expiry unknown"
             case .expired:
                 // Expired some time back…
                 return "\(self.licenseStatus) (Expired \(expirationDate))"
