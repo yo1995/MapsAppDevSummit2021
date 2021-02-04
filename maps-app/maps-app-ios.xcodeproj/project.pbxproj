@@ -549,17 +549,9 @@
 			isa = PBXGroup;
 			children = (
 				00A18BED25C48A9B000F7A6F /* ProgressHUD.swift */,
-				D9DE672B1F75A611004934AE /* FlexiblePageControl */,
-			);
-			path = "3rd Party";
-			sourceTree = "<group>";
-		};
-		D9DE672B1F75A611004934AE /* FlexiblePageControl */ = {
-			isa = PBXGroup;
-			children = (
 				D9DE67291F759378004934AE /* FlexiblePageControl.swift */,
 			);
-			path = FlexiblePageControl;
+			path = "3rd Party";
 			sourceTree = "<group>";
 		};
 		D9FF8D751F07068B00BD9B04 /* MapViewController+AppState */ = {
