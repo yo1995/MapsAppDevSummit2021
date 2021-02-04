@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14810.12" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14766.15"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -16,15 +16,15 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kZk-QH-kwl" customClass="AGSMapView">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="PDq-F2-UJ4">
-                                <rect key="frame" x="319" y="393" width="40" height="262"/>
+                                <rect key="frame" x="354" y="588" width="40" height="262"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Compass" translatesAutoresizingMaskIntoConstraints="NO" id="Xte-Zv-XAA" userLabel="North Arrow" customClass="NorthArrowView" customModule="maps_app_ios" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
@@ -160,7 +160,7 @@
                                 </constraints>
                             </stackView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jZt-eF-xnL" userLabel="Feedback Panel Container">
-                                <rect key="frame" x="16" y="8" width="343" height="44"/>
+                                <rect key="frame" x="20" y="52" width="374" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" priority="900" constant="44" id="YZp-8X-KBS"/>
                                 </constraints>
@@ -169,7 +169,7 @@
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e5m-If-kPv" userLabel="Suggestions Container">
-                                <rect key="frame" x="16" y="62" width="343" height="50"/>
+                                <rect key="frame" x="20" y="106" width="374" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" priority="900" constant="50" id="TZX-JI-HVT"/>
                                 </constraints>
@@ -181,7 +181,7 @@
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nVe-ks-G9Q" userLabel="Directions View">
-                                <rect key="frame" x="16" y="555" width="291" height="100"/>
+                                <rect key="frame" x="20" y="750" width="322" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" priority="990" constant="100" id="vUF-v2-feI"/>
                                 </constraints>
@@ -190,7 +190,7 @@
                                 </connections>
                             </containerView>
                             <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="liW-Ir-qwV" userLabel="Keyboard Spacer">
-                                <rect key="frame" x="0.0" y="667" width="375" height="0.0"/>
+                                <rect key="frame" x="0.0" y="862" width="414" height="0.0"/>
                                 <constraints>
                                     <constraint firstAttribute="height" id="7TW-uM-OEO"/>
                                 </constraints>
@@ -275,6 +275,11 @@
             <point key="canvasLocation" x="397" y="-4"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="Xte-Zv-XAA">
+            <size key="intrinsicContentSize" width="36" height="36"/>
+        </designable>
+    </designables>
     <resources>
         <image name="Account" width="30" height="30"/>
         <image name="Choose Basemap" width="30" height="30"/>
