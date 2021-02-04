@@ -11,12 +11,18 @@ class ViewController: UIViewController, AGSGeoViewTouchDelegate, AGSPopupsViewCo
     var featureLayer: AGSFeatureLayer!
     
     func makeMap() -> AGSMap {
-        let map = AGSMap(url: URL(string: "https://arcgisruntime.maps.arcgis.com/home/item.html?id=fb788308ea2e4d8682b9c05ef641f273")!)!
+        let map = AGSMap(url: URL(string: "https://www.arcgis.com/home/item.html?id=fb788308ea2e4d8682b9c05ef641f273")!)!
         map.load { [unowned self] error in
             guard error == nil else { return }
             mapView.setViewpoint(AGSViewpoint(latitude: 37.79, longitude: -122.50, scale: 5e4))
             mapView.touchDelegate = self
             featureLayer = map.operationalLayers.firstObject as? AGSFeatureLayer
+            featureLayer.definitionExpression =
+                """
+                req_Type <> 'Graffiti Complaint - Public Property' AND
+                req_Type <> 'Graffiti Complaint – Private Property' AND
+                req_Type <> 'Sewer Issues'
+                """
         }
         return map
     }
