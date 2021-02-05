@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14810.12" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ECg-xN-lMj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ECg-xN-lMj">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14766.15"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -14,56 +16,53 @@
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="cd3-x4-Yg3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="12" id="xjU-wj-v2k">
-                            <size key="itemSize" width="150" height="163"/>
+                            <size key="itemSize" width="187" height="163"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PortalItem" id="2Ac-LZ-Zod" customClass="PortalItemCollectionCell" customModule="maps_app_ios" customModuleProvider="target">
-                                <rect key="frame" x="10" y="10" width="150" height="163"/>
+                                <rect key="frame" x="10" y="10" width="187" height="163"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="150" height="163"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="DqK-fF-P84">
+                                    <rect key="frame" x="0.0" y="0.0" width="187" height="163"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="vK7-9k-Xou">
-                                            <rect key="frame" x="0.0" y="0.0" width="196.5" height="162"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="vK7-9k-Xou">
+                                            <rect key="frame" x="0.0" y="0.0" width="187" height="163"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Default Thumbnail" translatesAutoresizingMaskIntoConstraints="NO" id="gEV-VM-Kgq" customClass="RoundedImageView" customModule="maps_app_ios" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="0.0" width="150" height="100"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="187" height="124.5"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" secondItem="gEV-VM-Kgq" secondAttribute="height" multiplier="200:133" id="7C7-QO-HAW"/>
-                                                        <constraint firstAttribute="width" constant="150" id="iNE-Uv-7O5"/>
+                                                        <constraint firstAttribute="width" secondItem="gEV-VM-Kgq" secondAttribute="height" multiplier="3:2" id="7C7-QO-HAW"/>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="110" id="lls-AI-YDD"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                            <color key="value" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <color key="value" systemColor="opaqueSeparatorColor"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="49z-u8-rl3">
-                                                    <rect key="frame" x="0.0" y="104" width="150" height="55"/>
+                                                    <rect key="frame" x="0.0" y="128.5" width="187" height="34.5"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CPw-0d-1ac">
-                                                            <rect key="frame" x="0.0" y="0.0" width="8" height="55"/>
-                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="8" height="34.5"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="8" id="Pfp-aM-iBa"/>
                                                             </constraints>
                                                         </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" text="Item Name" textAlignment="center" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="none" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gip-W8-LRO">
-                                                            <rect key="frame" x="8" y="0.0" width="134" height="55"/>
+                                                            <rect key="frame" x="8" y="0.0" width="171" height="34.5"/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qIe-hL-N1P">
-                                                            <rect key="frame" x="142" y="0.0" width="8" height="55"/>
-                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <rect key="frame" x="179" y="0.0" width="8" height="34.5"/>
                                                         </view>
                                                     </subviews>
                                                     <constraints>
@@ -73,15 +72,15 @@
                                             </subviews>
                                         </stackView>
                                     </subviews>
-                                </view>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstItem="vK7-9k-Xou" firstAttribute="width" secondItem="DqK-fF-P84" secondAttribute="width" id="3Z6-E2-soR"/>
+                                        <constraint firstItem="vK7-9k-Xou" firstAttribute="height" secondItem="DqK-fF-P84" secondAttribute="height" id="ATP-xj-uuQ"/>
+                                        <constraint firstItem="vK7-9k-Xou" firstAttribute="centerY" secondItem="DqK-fF-P84" secondAttribute="centerY" id="VXX-HT-1iv"/>
+                                        <constraint firstItem="vK7-9k-Xou" firstAttribute="centerX" secondItem="DqK-fF-P84" secondAttribute="centerX" id="qpU-9f-l5G"/>
+                                    </constraints>
+                                </collectionViewCellContentView>
+                                <color key="backgroundColor" systemColor="systemGray3Color"/>
                                 <gestureRecognizers/>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="vK7-9k-Xou" secondAttribute="trailing" id="IKw-XB-L9P"/>
-                                    <constraint firstItem="vK7-9k-Xou" firstAttribute="top" secondItem="2Ac-LZ-Zod" secondAttribute="top" id="R7R-kq-kmG"/>
-                                    <constraint firstItem="vK7-9k-Xou" firstAttribute="leading" secondItem="2Ac-LZ-Zod" secondAttribute="leading" id="cId-8N-TeC"/>
-                                    <constraint firstAttribute="bottom" secondItem="vK7-9k-Xou" secondAttribute="bottom" constant="4" id="qdl-i2-V55"/>
-                                </constraints>
                                 <connections>
                                     <outlet property="itemTitle" destination="Gip-W8-LRO" id="AMH-qH-cFT"/>
                                     <outlet property="thumbnailView" destination="gEV-VM-Kgq" id="0gh-Oi-kbr"/>
@@ -99,10 +98,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wiP-xT-N81" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="vvw-SH-938" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2717.5999999999999" y="-2.2488755622188905"/>
+            <point key="canvasLocation" x="2717.3913043478265" y="-2.6785714285714284"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="gEV-VM-Kgq">
+            <size key="intrinsicContentSize" width="200" height="133"/>
+        </designable>
+    </designables>
     <resources>
         <image name="Default Thumbnail" width="200" height="133"/>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray3Color">
+            <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

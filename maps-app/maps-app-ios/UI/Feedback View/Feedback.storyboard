@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Rev-Z6-RLx">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Rev-Z6-RLx">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -25,7 +22,7 @@
                         <subviews>
                             <view opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="T5c-Uo-iRV" customClass="RoundedView" customModule="maps_app_ios" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" systemColor="tertiarySystemBackgroundColor"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="YES"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -115,16 +112,16 @@
                                         <rect key="frame" x="0.0" y="0.0" width="319" height="72"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="mWP-PU-2o4" userLabel="From Stack">
-                                                <rect key="frame" x="0.0" y="0.0" width="319" height="20.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="319" height="20"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="From:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R17-ha-Wxz">
-                                                        <rect key="frame" x="0.0" y="0.0" width="44" height="20.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="44" height="20"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2aD-ce-Bpq">
-                                                        <rect key="frame" x="52" y="0.0" width="239" height="20.5"/>
+                                                        <rect key="frame" x="52" y="0.0" width="239" height="20"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -142,7 +139,7 @@
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="98Z-Gd-voJ" userLabel="To Stack">
-                                                <rect key="frame" x="0.0" y="24.5" width="319" height="20"/>
+                                                <rect key="frame" x="0.0" y="24" width="319" height="20"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7gH-zT-q5G" userLabel="To:">
                                                         <rect key="frame" x="0.0" y="0.0" width="44" height="20"/>
@@ -150,7 +147,7 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsLetterSpacingToFitWidth="YES" preferredMaxLayoutWidth="185" translatesAutoresizingMaskIntoConstraints="NO" id="m9f-aR-4NK">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="185" translatesAutoresizingMaskIntoConstraints="NO" id="m9f-aR-4NK">
                                                         <rect key="frame" x="52" y="0.0" width="239" height="20"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
@@ -170,10 +167,10 @@
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="5Mb-pW-rE6" userLabel="Summary Stack">
-                                                <rect key="frame" x="0.0" y="48.5" width="319" height="23.5"/>
+                                                <rect key="frame" x="0.0" y="48" width="319" height="24"/>
                                                 <subviews>
                                                     <view userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="8Hk-tN-jaw">
-                                                        <rect key="frame" x="0.0" y="0.0" width="44" height="23.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="44" height="24"/>
                                                         <subviews>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Sedan" translatesAutoresizingMaskIntoConstraints="NO" id="l7o-Rc-omC">
                                                                 <rect key="frame" x="20" y="0.0" width="24" height="24"/>
@@ -188,7 +185,7 @@
                                                         </constraints>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="SgX-GL-sei">
-                                                        <rect key="frame" x="52" y="0.0" width="267" height="23.5"/>
+                                                        <rect key="frame" x="52" y="0.0" width="267" height="24"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -214,6 +211,7 @@
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" horizontalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aFe-Ln-wqg" userLabel="Close Button">
                                         <rect key="frame" x="327" y="0.0" width="32" height="72"/>
+                                        <color key="tintColor" systemColor="labelColor"/>
                                         <state key="normal" image="Cancel"/>
                                         <connections>
                                             <segue destination="hwd-Cr-ngo" kind="unwind" unwindAction="returnToSearch:" id="JiB-Zi-WQ4"/>
@@ -245,7 +243,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="10102" y="-172"/>
+            <point key="canvasLocation" x="10119" y="-194"/>
         </scene>
         <!--Geocode Result View Controller-->
         <scene sceneID="zMI-FL-Vmf">
@@ -289,6 +287,7 @@
                                         <constraints>
                                             <constraint firstAttribute="width" constant="30" id="9UV-bO-vrX"/>
                                         </constraints>
+                                        <color key="tintColor" systemColor="labelColor"/>
                                         <state key="normal" image="Open Directions"/>
                                         <connections>
                                             <action selector="requestRoute:" destination="DyS-dS-awY" eventType="touchUpInside" id="1iV-3Z-zqX"/>
@@ -296,6 +295,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" horizontalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qEG-KM-WSV">
                                         <rect key="frame" x="313" y="0.0" width="30" height="44"/>
+                                        <color key="tintColor" systemColor="labelColor"/>
                                         <state key="normal" image="Cancel"/>
                                         <connections>
                                             <segue destination="Rxs-Vd-saQ" kind="unwind" unwindAction="returnToSearch:" id="Bce-cH-NBR"/>
@@ -329,7 +329,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="10060" y="-396"/>
+            <point key="canvasLocation" x="10095" y="-400"/>
         </scene>
     </scenes>
     <resources>
@@ -339,5 +339,11 @@
         <image name="Route End" width="30" height="30"/>
         <image name="Route Start" width="30" height="30"/>
         <image name="Sedan" width="24" height="24"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="tertiarySystemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>
