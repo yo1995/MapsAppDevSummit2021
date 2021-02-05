@@ -47,7 +47,7 @@ extension AppContext {
      Given an AGSPortal, load the basemaps group.
      */
     private func loadBasemaps(portal: AGSPortal) {
-        if let basemapGroupQuery = portal.portalInfo?.basemapGalleryGroupQuery {
+        if let basemapGroupQuery = portal.portalInfo?.vectorBasemapGalleryGroupQuery {
             let params = AGSPortalQueryParameters(query: basemapGroupQuery)
             portal.findGroups(with: params, completion: { results, error in
                 guard error == nil else {

@@ -132,4 +132,9 @@ class MapViewController: UIViewController {
         // Stop caring about the keyboard display when the view disappears.
         deactivateKeyboardTracking()
     }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        print(mapView.map?.basemap.name)
+    }
 }
