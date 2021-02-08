@@ -133,8 +133,41 @@ class MapViewController: UIViewController {
         deactivateKeyboardTracking()
     }
     
+    // MARK: Dark Mode Adaption
+    
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
-        print(mapView.map?.basemap.name)
+        // A hack to make some basemaps dark mode adaptive.
+        if let itemID = mapsAppContext.currentBasemap?.itemID,
+           let style = idStyleMapping[itemID],
+           let pair = basemapStyleMappings[style] {
+            currentBasemapStylePair = pair
+        }
+    }
+    
+    private let idStyleMapping: [String: Styles] = [
+        "a343955125bf4002987c400ad6d0346c": .arcGISGray,
+        "de45b9cad20141ebb82fae0da8b3e2c6": .arcGISGray,
+        "f81bc478e12c4f1691d0d7ab6361f5a6": .streets,
+        "1c8ddaba2ee9498cb0025554351e5475": .streets
+    ]
+    
+    private let basemapStyleMappings: [Styles: (AGSBasemapStyle, AGSBasemapStyle)] = [
+        .arcGISGray: (.arcGISLightGray, .arcGISDarkGray),
+        .streets: (.arcGISStreets, .arcGISStreetsNight)
+    ]
+    
+    private var currentBasemapStylePair: (AGSBasemapStyle, AGSBasemapStyle) = (.arcGISLightGray, .arcGISDarkGray) {
+        didSet {
+            mapView.map?.basemap = AGSBasemap(style: currentBasemapStyle)
+        }
+    }
+    
+    private var currentBasemapStyle: AGSBasemapStyle {
+        traitCollection.userInterfaceStyle == .light ? currentBasemapStylePair.0 : currentBasemapStylePair.1
+    }
+    
+    private enum Styles: CaseIterable {
+        case streets, arcGISGray
     }
 }
