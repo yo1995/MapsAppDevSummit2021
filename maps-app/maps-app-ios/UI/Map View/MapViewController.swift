@@ -149,12 +149,15 @@ class MapViewController: UIViewController {
         "a343955125bf4002987c400ad6d0346c": .arcGISGray,
         "de45b9cad20141ebb82fae0da8b3e2c6": .arcGISGray,
         "f81bc478e12c4f1691d0d7ab6361f5a6": .streets,
-        "1c8ddaba2ee9498cb0025554351e5475": .streets
+        "1c8ddaba2ee9498cb0025554351e5475": .streets,
+        "61ffcf610f314933916e4b2c0e477b29": .navigation,
+        "459cc334740944d38580455a0a777a24": .navigation
     ]
     
     private let basemapStyleMappings: [Styles: (AGSBasemapStyle, AGSBasemapStyle)] = [
         .arcGISGray: (.arcGISLightGray, .arcGISDarkGray),
-        .streets: (.arcGISStreets, .arcGISStreetsNight)
+        .streets: (.arcGISStreets, .arcGISStreetsNight),
+        .navigation: (.arcGISNavigation, .arcGISNavigationNight)
     ]
     
     private var currentBasemapStylePair: (AGSBasemapStyle, AGSBasemapStyle) = (.arcGISLightGray, .arcGISDarkGray) {
@@ -168,6 +171,6 @@ class MapViewController: UIViewController {
     }
     
     private enum Styles: CaseIterable {
-        case streets, arcGISGray
+        case streets, arcGISGray, navigation
     }
 }
