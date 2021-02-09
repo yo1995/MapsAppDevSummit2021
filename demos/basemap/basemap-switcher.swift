@@ -17,7 +17,8 @@ class ViewController: UIViewController {
     
     private var currentBasemapStylePair: (AGSBasemapStyle, AGSBasemapStyle) = (.arcGISLightGray, .arcGISDarkGray) {
         didSet {
-//            mapView.map?.basemap = AGSBasemap(style: currentBasemapStyle)
+            // See https://github.com/yo1995/MapsAppDevSummit2021/pull/20#discussion_r572469824
+            // mapView.map?.basemap = AGSBasemap(style: currentBasemapStyle)
             mapView.map?.basemap = makeBasemap(style: currentBasemapStyle)
         }
     }
@@ -54,7 +55,7 @@ class ViewController: UIViewController {
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
-//        mapView.map?.basemap = AGSBasemap(style: currentBasemapStyle)
+        // mapView.map?.basemap = AGSBasemap(style: currentBasemapStyle)
         mapView.map?.basemap = makeBasemap(style: currentBasemapStyle)
     }
     
@@ -90,12 +91,12 @@ class ViewController: UIViewController {
     
     private func setUpCaches() {
         for (light, dark) in basemapStyleMappings.values {
-            let b1 = AGSBasemap(style: light)
-            let b2 = AGSBasemap(style: dark)
-            b1.load()
-            b2.load()
-            basemapCaches[light] = b1
-            basemapCaches[dark] = b2
+            let lightBasemap = AGSBasemap(style: light)
+            let darkBasemap = AGSBasemap(style: dark)
+            lightBasemap.load()
+            darkBasemap.load()
+            basemapCaches[light] = lightBasemap
+            basemapCaches[dark] = darkBasemap
         }
     }
     

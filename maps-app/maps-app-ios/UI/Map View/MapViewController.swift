@@ -137,7 +137,8 @@ class MapViewController: UIViewController {
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
-        // A hack to make some basemaps dark mode adaptive.
+        // Make some basemaps Dark Mode adaptive by replacing them with their
+        // light/dark style counterpart when the userInterfaceStyle changes.
         if let itemID = mapsAppContext.currentBasemap?.itemID,
            let style = idStyleMapping[itemID],
            let pair = basemapStyleMappings[style] {
