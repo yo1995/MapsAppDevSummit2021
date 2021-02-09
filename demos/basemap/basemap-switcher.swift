@@ -15,7 +15,7 @@ class ViewController: UIViewController {
         }
     }
     
-    private var currentBasemapStylePair: (AGSBasemapStyle, AGSBasemapStyle) = (.arcGISLightGray, .arcGISDarkGray) {
+    private var currentBasemapStylePair: (light: AGSBasemapStyle, dark: AGSBasemapStyle) = (.arcGISLightGray, .arcGISDarkGray) {
         didSet {
             // See https://github.com/yo1995/MapsAppDevSummit2021/pull/20#discussion_r572469824
             // mapView.map?.basemap = AGSBasemap(style: currentBasemapStyle)
@@ -24,7 +24,7 @@ class ViewController: UIViewController {
     }
     
     private var currentBasemapStyle: AGSBasemapStyle {
-        traitCollection.userInterfaceStyle == .light ? currentBasemapStylePair.0 : currentBasemapStylePair.1
+        traitCollection.userInterfaceStyle == .light ? currentBasemapStylePair.light : currentBasemapStylePair.dark
     }
     
     private let basemapStyleMappings: [Styles: (AGSBasemapStyle, AGSBasemapStyle)] = [
