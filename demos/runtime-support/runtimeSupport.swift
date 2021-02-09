@@ -35,6 +35,7 @@ class ViewController: UIViewController, AGSGeoViewTouchDelegate, AGSPopupsViewCo
             guard result.error == nil else { return }
             if let selectedFeature = result.geoElements.first as? AGSFeature {
                 if !result.popups.isEmpty {
+                    mapView.callout.dismiss()
                     // Show the popup for the selected feature.
                     featureLayer.select(selectedFeature)
                     let popupsViewController = AGSPopupsViewController(popups: result.popups)
