@@ -161,14 +161,14 @@ class MapViewController: UIViewController {
         .navigation: (.arcGISNavigation, .arcGISNavigationNight)
     ]
     
-    private var currentBasemapStylePair: (AGSBasemapStyle, AGSBasemapStyle) = (.arcGISLightGray, .arcGISDarkGray) {
+    private var currentBasemapStylePair: (light: AGSBasemapStyle, dark: AGSBasemapStyle) = (.arcGISLightGray, .arcGISDarkGray) {
         didSet {
             mapView.map?.basemap = AGSBasemap(style: currentBasemapStyle)
         }
     }
     
     private var currentBasemapStyle: AGSBasemapStyle {
-        traitCollection.userInterfaceStyle == .light ? currentBasemapStylePair.0 : currentBasemapStylePair.1
+        traitCollection.userInterfaceStyle == .light ? currentBasemapStylePair.light : currentBasemapStylePair.dark
     }
     
     private enum Styles: CaseIterable {
