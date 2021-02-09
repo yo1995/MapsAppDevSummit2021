@@ -1,18 +1,5 @@
 import UIKit
 import ArcGIS
-
-/// The URL of the portal with which to authenticate.
-private let portalURL = URL(string: "https://www.arcgis.com")!
-/// The Client ID for an app registered with the server. The provided ID is for
-/// a public app created by the ArcGIS Runtime team.
-private let portalItemID = "fb788308ea2e4d8682b9c05ef641f273"
-
-/// The identifier with which this application was registered with the portal.
-private let clientID = "lgAdHkYZYlwwfAhC"
-/// The URL for redirecting after a successful authorization (this must be
-/// configured in the Info plist).
-private let redirectURLString = "my-ags-app://auth"
-
 class ViewController: UIViewController, AGSGeoViewTouchDelegate, AGSPopupsViewControllerDelegate {
     @IBOutlet var mapView: AGSMapView! {
         didSet {
@@ -23,9 +10,7 @@ class ViewController: UIViewController, AGSGeoViewTouchDelegate, AGSPopupsViewCo
     var featureLayer: AGSFeatureLayer!
     
     func makeMap() -> AGSMap {
-        let portal = AGSPortal(url: portalURL, loginRequired: true)
-        let portalItem = AGSPortalItem(portal: portal, itemID: portalItemID)
-        let map = AGSMap(item: portalItem)
+        let map = AGSMap(url: URL(string: "https://www.arcgis.com/home/item.html?id=fb788308ea2e4d8682b9c05ef641f273")!)!
         map.load { [unowned self] error in
             guard error == nil else { return }
             mapView.setViewpoint(AGSViewpoint(latitude: 37.79, longitude: -122.50, scale: 5e4))
@@ -72,37 +57,9 @@ class ViewController: UIViewController, AGSGeoViewTouchDelegate, AGSPopupsViewCo
         }
     }
     
-    // MARK: - OAuth configuration
-    /// The OAuth configuration provided to the authentication manager.
-    let oAuthConfiguration = AGSOAuthConfiguration(portalURL: portalURL, clientID: clientID, redirectURL: redirectURLString)
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        
-        AGSAuthenticationManager.shared().delegate = self
-        AGSAuthenticationManager.shared().oAuthConfigurations.add(oAuthConfiguration)
-    }
-    
-    deinit {
-        AGSAuthenticationManager.shared().oAuthConfigurations.remove(oAuthConfiguration)
-        AGSAuthenticationManager.shared().credentialCache.removeAllCredentials()
-    }
-    
     // MARK: - AGSPopupsViewControllerDelegate
     
     func popupsViewControllerDidFinishViewingPopups(_ popupsViewController: AGSPopupsViewController) {
-        dismiss(animated: true)
-    }
-}
-
-// MARK: - AGSAuthenticationManagerDelegate
-extension ViewController: AGSAuthenticationManagerDelegate {
-    func authenticationManager(_ authenticationManager: AGSAuthenticationManager, wantsToShow viewController: UIViewController) {
-        viewController.modalPresentationStyle = .formSheet
-        present(viewController, animated: true)
-    }
-    
-    func authenticationManager(_ authenticationManager: AGSAuthenticationManager, wantsToDismiss viewController: UIViewController) {
         dismiss(animated: true)
     }
 }
