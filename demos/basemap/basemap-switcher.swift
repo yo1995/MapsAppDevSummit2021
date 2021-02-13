@@ -60,7 +60,6 @@ class ViewController: UIViewController {
     }
     
     private func setupUI() {
-        navigationController?.navigationBar.isHidden = true
         navigationController?.setToolbarHidden(false, animated: false)
         let items: [UIBarButtonItem] = [
             .init(barButtonSystemItem: .flexibleSpace, target: nil, action: nil),
